@@ -12,7 +12,7 @@ Public Class ImportCsv
     Protected Sub btnUl_Click(sender As Object, e As EventArgs) Handles btnUl.Click
         Dim strFilePath As String = "C:\zwork\keibadata\file.csv"
         Dim strEncode As String = "UTF-8"
-        Dim strSql As String = "insert into horse values(@a1, @a2, @a3,@a4, @a5, @a6)"
+        Dim strSql As String = "insert into horse values(@a1, @a2, @a3,@a4, @a5, @a6,@a7,@a8,@a9,@a10,@a11,@a12,@a13,@a14,@a15,@a16,@a17,@a18,@a19,@a20,@a21,@a22,@a23)"
         Dim bFirstFlg As Boolean = True
 
         'DBアクセス
@@ -47,7 +47,7 @@ Public Class ImportCsv
 
                     intColCnt += 1
                     sql.Parameters.AddWithValue("@a" & intColCnt.ToString, col)
-                    If intColCnt = 6 Then Exit For
+                    If intColCnt = 23 Then Exit For
                 Next
 
                 Using db As New SqlConnection(con.ConnectionString)
